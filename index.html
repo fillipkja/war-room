@@ -54,7 +54,7 @@
     box-shadow: 0 0 90px rgba(235,104,52,0.08), 0 0 2px rgba(255,255,255,0.14);
   }
   @media (max-aspect-ratio: 9/16) {
-    .frame { height: auto; width: 100vw; aspect-ratio: 9 / 16; }
+    .frame { height: 100vh; height: 100dvh; width: 100vw; aspect-ratio: auto; }
   }
 
   svg#map { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
@@ -165,7 +165,7 @@
 
   /* ── Story block (lower third, left-aligned) ─────────── */
   .story {
-    position: absolute; left: 20px; right: 20px; bottom: calc(46px + env(safe-area-inset-bottom, 0px)); z-index: 10;
+    position: absolute; left: 20px; right: 20px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 10;
     opacity: 0; transform: translateY(14px);
     transition: opacity 0.45s ease, transform 0.45s ease;
   }

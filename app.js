@@ -154,9 +154,8 @@
   function eventView(ev) {
     let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
     for (const id of allIds(ev)) {
-      const f = byId.get(id);
-      if (!f) continue;
-      const b = path.bounds(f);
+      const b = countryBounds(id);
+      if (!b) continue;
       x0 = Math.min(x0, b[0][0]); y0 = Math.min(y0, b[0][1]);
       x1 = Math.max(x1, b[1][0]); y1 = Math.max(y1, b[1][1]);
     }
@@ -193,6 +192,32 @@
     return f ? path.centroid(f) : null;
   }
 
+  // Mainland fit-boxes for nations whose map shapes include far-flung
+  // territories (French Guiana, Alaska, overseas islands...) that would
+  // otherwise balloon the camera framing to half the globe.
+  const FIT_BOXES = {
+    "250": [[-5.5, 41], [9.8, 51.5]],    // France (metropolitan)
+    "840": [[-125, 24], [-66, 50]],      // USA (CONUS)
+    "643": [[27, 45], [105, 72]],        // Russia (west of Yakutia)
+    "528": [[3.2, 50.7], [7.3, 53.6]],   // Netherlands (European)
+    "554": [[166, -47.5], [179, -34]],   // New Zealand (main islands)
+    "152": [[-76, -56], [-66, -17]],     // Chile (continental)
+    "724": [[-10, 35.8], [4.6, 44]],     // Spain (peninsula + Balearics)
+    "620": [[-9.6, 36.8], [-6.1, 42.2]]  // Portugal (continental)
+  };
+
+  function countryBounds(id) {
+    const box = FIT_BOXES[id];
+    if (box) {
+      const [[lo0, la0], [lo1, la1]] = box;
+      const pts = [[lo0, la0], [lo1, la0], [lo0, la1], [lo1, la1]].map(projection);
+      const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+      return [[Math.min(...xs), Math.min(...ys)], [Math.max(...xs), Math.max(...ys)]];
+    }
+    const f = byId.get(id);
+    return f ? path.bounds(f) : null;
+  }
+
   // Camera view framing one nation (or bloc / explicit lon-lat box) —
   // multi-nation stories travel between these instead of showing the world.
   function nationView(b) {
@@ -209,11 +234,11 @@
       });
     } else if (b.region && GROUPS[b.region]) {
       GROUPS[b.region].forEach(id => {
-        const f = byId.get(id);
-        if (f) grow(path.bounds(f));
+        const bb = countryBounds(id);
+        if (bb) grow(bb);
       });
-    } else if (b.country && byId.get(b.country)) {
-      grow(path.bounds(byId.get(b.country)));
+    } else if (b.country && countryBounds(b.country)) {
+      grow(countryBounds(b.country));
     } else if (b.anchor) {
       const p = projection(b.anchor);
       grow([[p[0] - 20, p[1] - 20], [p[0] + 20, p[1] + 20]]);
@@ -277,16 +302,36 @@
     // data anchor) and only ever moves with the map. It stays fully inside
     // the frame, and fades once its nation has drifted out of view.
     const badgePts = [];
-    gOverlay.selectAll("g.badge-g").attr("transform", function (d) {
-      const p = pt(badgeBase(d) || [0, 0]);
-      const off = p[0] < -60 || p[0] > width + 60 || p[1] < -60 || p[1] > height + 60;
-      // keep the badge and its name label fully on screen
+    const bNodes = gOverlay.selectAll("g.badge-g").nodes();
+    const bData = bNodes.map(n => d3.select(n).datum());
+    const bPos = bData.map(d => pt(badgeBase(d) || [0, 0]));
+    const bOff = bPos.map(p =>
+      p[0] < -60 || p[0] > width + 60 || p[1] < -60 || p[1] > height + 60);
+    // neighbouring nations: push overlapping badges apart symmetrically
+    for (let i = 0; i < bPos.length; i++) {
+      for (let j = i + 1; j < bPos.length; j++) {
+        if (bOff[i] || bOff[j]) continue;
+        let dx = bPos[j][0] - bPos[i][0], dy = bPos[j][1] - bPos[i][1];
+        let dist = Math.hypot(dx, dy);
+        const minD = S + 8;
+        if (dist < minD) {
+          if (dist < 1) { dx = 1; dy = 0; dist = 1; }
+          const push = (minD - dist) / 2;
+          bPos[i][0] -= dx / dist * push; bPos[i][1] -= dy / dist * push;
+          bPos[j][0] += dx / dist * push; bPos[j][1] += dy / dist * push;
+        }
+      }
+    }
+    bNodes.forEach((n, i) => {
+      const p = bPos[i], d = bData[i];
+      // keep the badge and its name label fully on screen, and clear of
+      // the story text zone at the bottom
       const nameHalf = (d.name || "").length * (S > 110 ? 10.5 : 9.5) * 0.42;
       const rr = Math.max(S / 2, nameHalf) + 10;
       p[0] = Math.min(width - rr, Math.max(rr, p[0]));
-      p[1] = Math.min(height * 0.62, Math.max(S / 2 + 100, p[1]));
-      if (!off && !this.classList.contains("exiting")) badgePts.push(p);
-      return `translate(${p[0]},${p[1]})`;
+      p[1] = Math.min(height * 0.55, Math.max(S / 2 + 100, p[1]));
+      if (!bOff[i] && !n.classList.contains("exiting")) badgePts.push(p);
+      n.setAttribute("transform", `translate(${p[0]},${p[1]})`);
     });
     gOverlay.selectAll("g.badge-g:not(.exiting)").style("opacity", d => {
       // hidden until its reveal moment, and whenever the nation is
@@ -325,11 +370,11 @@
     mkAll.select("text").text(d => d.label)
       .attr("text-anchor", d => {
         const p = pt(projection([d.lon, d.lat]));
-        return p[0] > width - 110 ? "end" : "start";
+        return p[0] > width - 150 ? "end" : "start";
       })
       .attr("dx", d => {
         const p = pt(projection([d.lon, d.lat]));
-        return p[0] > width - 110 ? -9 : 9;
+        return p[0] > width - 150 ? -9 : 9;
       });
     // pins render above badges when visible
     mkAll.raise();
