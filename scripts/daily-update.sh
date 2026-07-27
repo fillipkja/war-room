@@ -5,6 +5,9 @@ set -euo pipefail
 cd "/Users/fillip/App_test/war-room"
 mkdir -p logs
 
+# pick up commits pushed from other checkouts before committing on top
+git pull --ff-only
+
 export PATH="/Users/fillip/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH"
 
 echo "=== War Room update $(date) ==="

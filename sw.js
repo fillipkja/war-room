@@ -1,6 +1,6 @@
 /* War Room service worker — network-first so each day's brief is always
    fresh, with a full offline fallback from cache. */
-const CACHE = "warroom-v1";
+const CACHE = "warroom-v2";
 const CORE = [
   "./",
   "./index.html",

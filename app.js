@@ -8,6 +8,13 @@
   const MAX_K = 30;            // zoom ceiling (tiny island states)
   const FIT = 0.62;            // fraction of the frame the story bbox fills
 
+  // Desktop / web layout (sidebar rundown, wide map). Must match the CSS
+  // media query. Phone keeps the lower half free for the story text; the
+  // desktop map can use most of its height.
+  const DESK = window.matchMedia("(min-width: 900px) and (orientation: landscape)");
+  const useH = () => DESK.matches ? 0.60 : 0.42;   // usable-height fraction
+  const cyOff = () => DESK.matches ? 0.05 : 0.10;  // downward centre shift
+
   const ACCENT = getCSS("--accent");
   // each nation in a story gets its own colour, assigned in listed order
   const NATION_COLORS = ["#d03b3b", "#3a72d8", "#1baf7a"];
@@ -165,11 +172,11 @@
       x1 = Math.max(x1, p[0] + 4); y1 = Math.max(y1, p[1] + 4);
     }
     const dw = Math.max(x1 - x0, 1), dh = Math.max(y1 - y0, 1);
-    const uw = width * 0.9, uh = height * 0.42;
+    const uw = width * 0.9, uh = height * useH();
     let k = FIT * Math.min(uw / dw, uh / dh);
     k = Math.max(1, Math.min(MAX_K, k));
     const cx = (x0 + x1) / 2;
-    const cy = (y0 + y1) / 2 + (0.10 * height) / k;
+    const cy = (y0 + y1) / 2 + (cyOff() * height) / k;
     return [cx, cy, width / k];
   }
 
@@ -182,7 +189,7 @@
     if (b0) c = badgeBase(b0);
     if (!c && ev.markers && ev.markers[0]) c = projection([ev.markers[0].lon, ev.markers[0].lat]);
     if (!c) c = [vWide[0], vWide[1]];
-    const cy = c[1] + (0.10 * height) / kT;
+    const cy = c[1] + (cyOff() * height) / kT;
     return [c[0], cy, width / kT];
   }
 
@@ -244,10 +251,10 @@
       grow([[p[0] - 20, p[1] - 20], [p[0] + 20, p[1] + 20]]);
     }
     const dw = Math.max(x1 - x0, 1), dh = Math.max(y1 - y0, 1);
-    const uw = width * 0.9, uh = height * 0.42;
+    const uw = width * 0.9, uh = height * useH();
     let k = 0.62 * Math.min(uw / dw, uh / dh);
     k = Math.max(1.8, Math.min(18, k));
-    const cy = (y0 + y1) / 2 + (0.10 * height) / k;
+    const cy = (y0 + y1) / 2 + (cyOff() * height) / k;
     return [(x0 + x1) / 2, cy, width / k];
   }
 
@@ -329,7 +336,8 @@
       const nameHalf = (d.name || "").length * (S > 110 ? 10.5 : 9.5) * 0.42;
       const rr = Math.max(S / 2, nameHalf) + 10;
       p[0] = Math.min(width - rr, Math.max(rr, p[0]));
-      p[1] = Math.min(height * 0.55, Math.max(S / 2 + 100, p[1]));
+      p[1] = Math.min(height * (DESK.matches ? 0.72 : 0.55),
+                      Math.max(S / 2 + (DESK.matches ? 44 : 100), p[1]));
       if (!bOff[i] && !n.classList.contains("exiting")) badgePts.push(p);
       n.setAttribute("transform", `translate(${p[0]},${p[1]})`);
     });
@@ -467,6 +475,11 @@
     document.getElementById("counter").textContent =
       `ITEM ${String(activeIdx + 1).padStart(2, "0")} / ${String(BRIEF.events.length).padStart(2, "0")}`;
 
+    document.querySelectorAll(".rd-item").forEach((el, i) => {
+      el.classList.toggle("active", i === activeIdx);
+      if (i === activeIdx && DESK.matches) el.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    });
+
     restartDwell();
   }
 
@@ -513,9 +526,24 @@
   // ── Static chrome ────────────────────────────────────────
   function buildChrome() {
     document.getElementById("brief-date").textContent = BRIEF.date;
+    document.getElementById("sb-date").textContent = BRIEF.date;
 
     document.getElementById("segments").innerHTML =
       BRIEF.events.map(() => `<span class="seg"><i></i></span>`).join("");
+
+    // sidebar rundown (desktop layout): every story, click to jump
+    const rundown = document.getElementById("rundown");
+    rundown.innerHTML = BRIEF.events.map((ev, i) => `
+      <li><button class="rd-item" data-idx="${i}">
+        <span class="rd-no">${String(i + 1).padStart(2, "0")}</span>
+        <span class="rd-body">
+          <span class="rd-meta"><b>${ev.category}</b>&nbsp;&nbsp;//&nbsp;&nbsp;${ev.when}</span>
+          <span class="rd-title">${renderTitle(ev.title)}</span>
+          ${ev.location ? `<span class="rd-loc">${ev.location}</span>` : ""}
+        </span>
+      </button></li>`).join("");
+    rundown.querySelectorAll(".rd-item").forEach(btn =>
+      btn.addEventListener("click", () => setActive(+btn.dataset.idx)));
 
     document.getElementById("sources-list").innerHTML = BRIEF.sources.map(s =>
       `<a href="${s.url}" target="_blank" rel="noopener">&#9656; ${s.name}</a>`
@@ -540,6 +568,7 @@
     else if (e.key === " ") { e.preventDefault(); setPlaying(!playing); }
   });
   window.addEventListener("resize", layout);
+  if (DESK.addEventListener) DESK.addEventListener("change", layout);
 
   // ── Boot ─────────────────────────────────────────────────
   buildChrome();
