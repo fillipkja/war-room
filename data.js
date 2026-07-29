@@ -1,10 +1,10 @@
 // THE WAR ROOM — Daily Geopolitical Brief data
-// Brief compiled for Tuesday, 28 July 2026, from open-source reporting.
+// Brief compiled for Wednesday, 29 July 2026, from open-source reporting.
 // All items are from the past week. Country codes are ISO 3166-1 numeric
 // ids matching world-atlas TopoJSON.
 
 window.BRIEF = {
-  date: "28//JULY//2026",
+  date: "29//JULY//2026",
   // alliance blocs — a story may list a group key in `countries` to
   // highlight every member in the bloc's colour (EU blue, etc.)
   groups: {
@@ -14,88 +14,102 @@ window.BRIEF = {
   },
   events: [
     {
-      id: "netanyahu-trump",
-      category: "DIPLOMACY",
+      id: "iran-jordan-missiles",
+      category: "SECURITY",
       when: "TUE 28 JUL",
-      badges: [{ name: "ISRAEL", emblems: ["israel.svg"], country: "376", anchor: [32.6, 32.3] }, { name: "USA", emblems: ["usa.svg"], country: "840", region: [[-125, 24], [-66, 50]], anchor: [-98.5, 39.8] }],
-      title: "[[Netanyahu]] meets [[Trump]] today — first since the Iran war began",
-      location: "Washington, DC",
-      countries: ["376", "840"],
+      badges: [{ name: "IRAN", emblems: ["iran.svg"], country: "364" }, { name: "USA", emblems: ["usa.svg"], country: "840", region: [[-125, 24], [-66, 50]], anchor: [-98.5, 39.8] }],
+      title: "[[Iran]] fires ballistic missiles at US base in [[Jordan]] — pause punctured",
+      location: "Jordan — Iraq",
+      countries: ["364", "840", "400", "368"],
       markers: [
-        { lon: -77.04, lat: 38.9, label: "WASHINGTON" },
-        { lon: 35.21, lat: 31.77, label: "JERUSALEM" }
-      ],
-      summary:
-        "Netanyahu sits down with Trump at the White House today, their first meeting since the war with Iran began and one the two have publicly disagreed over. Iran tops the agenda alongside a Lebanon peace framework and expanding the Abraham Accords; Netanyahu departed Israel secretively amid a reported Iranian security threat. Trump, under pressure to end an unpopular war, hosts Zelensky later the same day.",
-      source: "The Times of Israel"
-    },
-    {
-      id: "us-iran-talks",
-      category: "SECURITY",
-      when: "MON 27 JUL",
-      badges: [{ name: "USA", emblems: ["usa.svg"], country: "840", region: [[-125, 24], [-66, 50]], anchor: [-98.5, 39.8] }, { name: "IRAN", emblems: ["iran.svg"], country: "364" }],
-      title: "[[Strike pause]] holds; Iran denies [[direct talks]] with US",
-      location: "Tehran — Doha",
-      countries: ["840", "364"],
-      markers: [
+        { lon: 35.93, lat: 31.95, label: "AMMAN" },
         { lon: 51.39, lat: 35.69, label: "TEHRAN" },
-        { lon: 51.53, lat: 25.29, label: "DOHA" }
+        { lon: 44.36, lat: 33.31, label: "BAGHDAD" }
       ],
       summary:
-        "No new US strikes for a third night, with Trump saying he halted the campaign at Tehran's request and will resume if no ceasefire deal emerges. Iran's foreign ministry insists there are no direct negotiations — mediators relay American messages, and its only formal track is with Oman over the Strait of Hormuz — while VP Vance says technical talks in Doha continue under a 14-point memorandum.",
-      source: "CNN"
+        "IRGC forces launched multiple ballistic missiles at a US base in Jordan — Iran's first attack on American forces since Trump paused strikes on Friday. All missiles were intercepted, and the US and Saudi militaries answered with joint precision strikes on Iran-aligned militias in Iraq that CENTCOM says were directed by the IRGC to hit US forces and Saudi energy infrastructure.",
+      source: "CNBC"
     },
     {
-      id: "zelensky-burnham",
+      id: "hormuz-oil",
+      category: "ECONOMY",
+      when: "WED 29 JUL",
+      badges: [{ name: "IRAN", emblems: ["iran.svg"], country: "364" }, { name: "SAUDI ARABIA", emblems: ["saudi.png"], country: "682" }],
+      title: "[[Brent]] rebounds toward $88 as Iran rejects [[Omani Hormuz plan]]",
+      location: "Strait of Hormuz",
+      countries: ["364", "512", "682"],
+      markers: [
+        { lon: 56.5, lat: 26.6, label: "STRAIT OF HORMUZ" },
+        { lon: 58.38, lat: 23.61, label: "MUSCAT" }
+      ],
+      summary:
+        "Brent climbed more than 4% to near $88 after the intercepted attack, paring a 16% three-session slide that was the steepest since 2020. Tehran rejected Oman's plan to split control of the Strait of Hormuz evenly — the inbound lane 'must be entirely under Iran's control', deputy FM Gharibabadi said — as FM Araghchi discussed the waterway's security with his Saudi and Omani counterparts.",
+      source: "Bloomberg"
+    },
+    {
+      id: "trump-meetings",
       category: "DIPLOMACY",
-      when: "MON 27 JUL",
-      badges: [{ name: "UK", emblems: ["uk.png"], country: "826" }, { name: "UKRAINE", emblems: ["ukraine.png"], country: "804" }],
-      title: "[[Zelensky]] first leader hosted by new UK PM [[Burnham]]",
-      location: "Portsmouth, England",
-      countries: ["826", "804"],
-      markers: [
-        { lon: -1.09, lat: 50.8, label: "PORTSMOUTH" },
-        { lon: -0.13, lat: 51.51, label: "LONDON" }
-      ],
+      when: "YESTERDAY",
+      badges: [{ name: "USA", emblems: ["usa.svg"], country: "840", region: [[-125, 24], [-66, 50]], anchor: [-98.5, 39.8] }, { name: "UKRAINE", emblems: ["ukraine.png"], country: "804" }, { name: "ISRAEL", emblems: ["israel.svg"], country: "376", anchor: [32.6, 32.3] }],
+      title: "Trump hosts [[Zelensky]] and [[Netanyahu]] back-to-back at White House",
+      location: "Washington, DC",
+      countries: ["840", "804", "376"],
+      markers: [{ lon: -77.04, lat: 38.9, label: "WASHINGTON" }],
       summary:
-        "Zelensky met Andy Burnham at Portsmouth Naval Base — the first foreign leader received by Britain's new prime minister, in office one week since Keir Starmer's resignation. Burnham pledged 'unwavering' support, joint drone projects and the intellectual property behind the UK's Stone Cloak electronic-warfare system; Zelensky flies on to Washington to see Trump today.",
-      source: "France 24"
+        "Trump met Zelensky and then Netanyahu in separate Oval Office sessions the White House called 'positive and productive'. Zelensky said they discussed licences for Ukrainian production of Patriot interceptors and reinvigorating diplomacy with Moscow; Netanyahu — who called it one of his greatest meetings with Trump — focused on the Lebanon framework agreement and expanding the Abraham Accords.",
+      source: "ABC News"
     },
     {
-      id: "romania-russia",
+      id: "ukraine-drones",
       category: "SECURITY",
-      when: "MON 27 JUL",
-      badges: [{ name: "ROMANIA", emblems: ["romania.png"], country: "642" }, { name: "RUSSIA", emblems: ["russia.svg"], country: "643", region: [[27, 45], [105, 70]], anchor: [55, 57] }],
-      title: "[[Romania]] expels Russian diplomat after downing [[third drone]]",
-      location: "Bucharest, Romania",
-      countries: ["642", "643"],
-      markers: [
-        { lon: 26.1, lat: 44.43, label: "BUCHAREST" },
-        { lon: 28.8, lat: 45.18, label: "DANUBE DELTA" }
-      ],
-      summary:
-        "Bucharest declared a Russian embassy member persona non grata and recalled its own ambassador from Moscow after Romanian forces shot down three drones that crossed into its airspace between July 24 and 26. The Russian envoy was shown fragments of a downed drone that prosecutors traced to Russian-origin components; Romania called repeat violations of NATO and EU airspace 'absolutely unacceptable'.",
-      source: "Ukrinform"
-    },
-    {
-      id: "ukraine-strikes",
-      category: "SECURITY",
-      when: "MON 27 JUL",
+      when: "TUE 28 JUL",
       badges: [{ name: "UKRAINE", emblems: ["ukraine.png"], country: "804" }, { name: "RUSSIA", emblems: ["russia.svg"], country: "643", region: [[27, 45], [105, 70]], anchor: [55, 57] }],
-      title: "Ukraine hits [[Russian oil infrastructure]]; 147 drones launched at Ukraine",
-      location: "Kyiv, Ukraine",
+      title: "Drone war peaks: Russia claims [[356 downed]]; Kyiv stops 107 of 131",
+      location: "Moscow Oblast — Pokrovsk",
       countries: ["804", "643"],
-      markers: [{ lon: 30.52, lat: 50.45, label: "KYIV" }],
+      markers: [
+        { lon: 37.62, lat: 55.75, label: "MOSCOW" },
+        { lon: 37.18, lat: 48.28, label: "POKROVSK" }
+      ],
       summary:
-        "Ukraine pressed its long-range strike campaign against Russian export and oil infrastructure through the weekend, while Russia launched 147 drones at Ukraine overnight into Monday; neither side made confirmed battlefield advances. New commander-in-chief Mykhailo Drapatyi is a week into the job after protests forced out Gen. Syrsky in Kyiv's biggest wartime shake-up.",
-      source: "Kyiv Post"
+        "Ukrainian drones struck a steel-fabrication plant in Chekhov outside Moscow and blacked out parts of occupied Crimea; Russia's defence ministry claimed 356 drones downed overnight. Ukraine's air defences destroyed 107 of 131 Russian attack drones, while the general staff logged 226 combat clashes in a single day — the heaviest around Pokrovsk.",
+      source: "Kyiv Independent"
+    },
+    {
+      id: "cyprus-talks",
+      category: "DIPLOMACY",
+      when: "WED 29 JUL",
+      badges: [{ name: "CYPRUS", emblems: ["cyprus.png"], country: "196" }],
+      title: "[[Guterres]] convenes rival [[Cyprus leaders]] in buffer-zone talks today",
+      location: "Nicosia, Cyprus",
+      countries: ["196"],
+      markers: [{ lon: 33.36, lat: 35.17, label: "NICOSIA" }],
+      summary:
+        "Guterres holds joint talks today with Greek Cypriot leader Christodoulides and Turkish Cypriot leader Erhürman in the UN buffer zone dividing Nicosia — the first visit by a sitting UN chief in 16 years, aimed at reviving negotiations nine years after they collapsed. Erhürman favours a federal settlement but insists on ground rules covering political equality before talks resume.",
+      source: "AP"
+    },
+    {
+      id: "sudan-bara",
+      category: "SECURITY",
+      when: "TUE 28 JUL",
+      badges: [{ name: "SUDAN", emblems: ["sudan.png"], country: "729" }],
+      title: "Army takes [[Bara]]; Dagalo [['releases the reins']] of RSF fighters",
+      location: "North Kordofan, Sudan",
+      countries: ["729"],
+      markers: [
+        { lon: 30.36, lat: 13.7, label: "BARA" },
+        { lon: 30.22, lat: 13.18, label: "EL OBEID" }
+      ],
+      summary:
+        "Sudan's army captured the town of Bara in North Kordofan, a second battlefield setback for the RSF in days after losing the Khartoum–El Obeid highway. RSF leader Dagalo responded with a video message 'releasing the reins' of his frontline fighters, and UN rights chief Türk warned a catastrophe is unfolding around El Obeid, citing summary executions, abductions and sexual violence.",
+      source: "Al-Monitor"
     },
     {
       id: "europe-wildfires",
       category: "DISASTER",
-      when: "TUE 28 JUL",
+      when: "WED 29 JUL",
       badges: [{ name: "FRANCE", emblems: ["france.png"], country: "250" }, { name: "SPAIN", emblems: ["spain.svg"], country: "724" }],
-      title: "[[Macron]]: wildfire crisis France's [[worst since WWII]]",
+      title: "[[4,000 evacuated]] on Atlantic coast as [[new heatwave]] arrives today",
       location: "Gironde, France — Madrid, Spain",
       countries: ["250", "724"],
       markers: [
@@ -103,15 +117,15 @@ window.BRIEF = {
         { lon: -3.7, lat: 40.42, label: "MADRID" }
       ],
       summary:
-        "Macron called the fires the most severe France has battled since World War II, with some 250,000 evacuated there and 63,000 more around Madrid. France's weather office issued fresh heatwave alerts for Gironde and Landes with no rain forecast, military engineers joined firefighting lines, and in eastern Spain unexploded civil-war ordnance is endangering crews.",
-      source: "CNN"
+        "French authorities cleared nearly 4,000 people from Atlantic-coast tourist sites as returning heat threatens the fragile containment of the vast blaze west of Bordeaux, where 93 firefighters have been injured. The fires have burned some 300,000 acres across France and Spain and displaced roughly 330,000 people; Spain enters its fourth heatwave of the summer with its largest fire on record still burning.",
+      source: "NPR"
     },
     {
-      id: "pakistan-floods",
+      id: "pakistan-monsoon",
       category: "DISASTER",
-      when: "MON 27 JUL",
+      when: "WED 29 JUL",
       badges: [{ name: "PAKISTAN", emblems: ["pakistan.png"], country: "586" }],
-      title: "[[Pakistan monsoon]] toll tops 100 as more [[heavy rain]] forecast",
+      title: "Fresh [[monsoon spell]] hits Pakistan today; toll rises to [[110]]",
       location: "Khyber Pakhtunkhwa, Pakistan",
       countries: ["586"],
       markers: [
@@ -119,94 +133,66 @@ window.BRIEF = {
         { lon: 74.34, lat: 31.55, label: "LAHORE" }
       ],
       summary:
-        "At least 107 people have been killed and 344 injured in monsoon rains and flash flooding since late June, many in house and roof collapses. Khyber Pakhtunkhwa accounts for over half the deaths with 55, followed by Punjab with 36, and forecasters warn of more heavy rain across the country later this week.",
-      source: "Al Jazeera"
+        "A powerful new monsoon spell moves over Pakistan's upper regions from today and is forecast to last until August 5, with the nationwide death toll from rains and flash floods now at 110 since June 26. Khyber Pakhtunkhwa accounts for 55 deaths and Punjab 36, most caused by collapsing houses and roofs.",
+      source: "Dawn"
     },
     {
-      id: "brent-abqaiq",
-      category: "ECONOMY",
-      when: "MON 27 JUL",
-      badges: [{ name: "SAUDI ARABIA", emblems: ["saudi.png"], country: "682" }, { name: "IRAN", emblems: ["iran.svg"], country: "364" }],
-      title: "[[Brent]] plunges 11% — but Houthis strike [[Abqaiq]]",
-      location: "Abqaiq — Riyadh, Saudi Arabia",
-      countries: ["682", "364"],
-      markers: [
-        { lon: 49.67, lat: 25.94, label: "ABQAIQ" },
-        { lon: 46.72, lat: 24.63, label: "RIYADH" }
-      ],
+      id: "japan-intel",
+      category: "SECURITY",
+      when: "THIS WEEK",
+      badges: [{ name: "JAPAN", emblems: ["japan.png"], country: "392" }],
+      title: "Japan launches first [[central intelligence agency]] since WWII on Friday",
+      location: "Tokyo, Japan",
+      countries: ["392"],
+      markers: [{ lon: 139.69, lat: 35.68, label: "TOKYO" }],
       summary:
-        "Brent futures closed down 11.3% Monday — the steepest fall since April — as the US–Iran pause held, with US crude off about 7%. The risk premium is far from gone: Houthi drones damaged the Abqaiq oil-processing complex, and Saudi defences intercepted drones launched by Iraqi militias at oil facilities and the Riyadh area.",
-      source: "CNBC"
+        "Japan stands up its National Intelligence Bureau on July 31 — its first centralised espionage agency since World War II, launching with about 700 staff — and PM Takaichi chairs the inaugural National Intelligence Council the same day. The reform converts the Cabinet Intelligence and Research Office into a centralised apparatus amid espionage, cyberattack and foreign-influence concerns focused on China.",
+      source: "The Washington Times"
     },
     {
-      id: "fujimori-inauguration",
+      id: "fujimori-iron-fist",
       category: "ELECTION",
       when: "TUE 28 JUL",
       badges: [{ name: "PERU", emblems: ["peru.png"], country: "604" }],
-      title: "[[Keiko Fujimori]] sworn in as [[Peru's first elected woman president]]",
+      title: "President [[Fujimori]] pledges [['iron fist']] on crime in first address",
       location: "Lima, Peru",
       countries: ["604"],
       markers: [{ lon: -77.03, lat: -12.05, label: "LIMA" }],
       summary:
-        "Keiko Fujimori takes the oath in Lima today — Peru's Independence Day — after a runoff won by just 49,641 votes of 18 million cast, becoming the first woman elected president by direct vote. Spain's King Felipe VI, Argentina's Milei and a US delegation under Deputy Secretary Landau attend, while nationwide protests are expected against a deeply divisive presidency.",
-      source: "The Rio Times"
+        "Sworn in on Independence Day as Peru's first woman elected president, Keiko Fujimori used her inaugural address to pledge an 'iron fist' against organised crime and extortion. She takes office with a fragmented congress and protests already in the streets, after a runoff decided by fewer than 50,000 votes of 18 million cast.",
+      source: "Euronews"
     },
     {
-      id: "sudan-highway",
-      category: "SECURITY",
-      when: "MON 27 JUL",
-      badges: [{ name: "SUDAN", emblems: ["sudan.png"], country: "729" }],
-      title: "Army retakes [[Khartoum–El Obeid highway]]; RSF answers with [[drone strikes]]",
-      location: "North Kordofan, Sudan",
-      countries: ["729"],
-      markers: [
-        { lon: 30.22, lat: 13.18, label: "EL OBEID" },
-        { lon: 32.53, lat: 15.55, label: "KHARTOUM" }
-      ],
-      summary:
-        "Sudan's army pushed the RSF off the 400-km highway linking Khartoum to El Obeid, reopening a supply artery to the besieged city of half a million after a days-long advance across North Kordofan. Hours later, dawn drone strikes blamed on the RSF hit El Obeid, destroying the lawyers' association and a bank branch, though no casualties were reported.",
-      source: "Al Jazeera"
-    },
-    {
-      id: "yoon-sentence",
-      category: "LAW",
-      when: "MON 27 JUL",
-      badges: [{ name: "SOUTH KOREA", emblems: ["southkorea.png"], country: "410" }],
-      title: "[[Yoon]] handed suspended term for [[election lies]] — atop life sentence",
-      location: "Seoul, South Korea",
-      countries: ["410"],
-      markers: [{ lon: 126.98, lat: 37.57, label: "SEOUL" }],
-      summary:
-        "A Seoul court sentenced ex-president Yoon Suk Yeol to 18 months in prison, suspended for three years, for false statements during his 2022 campaign — on top of the life term he is already serving for insurrection. If upheld, the verdict could nullify his 2022 win and force his People Power Party to repay 39.7 billion won in election expenses.",
-      source: "The Korea Herald"
-    },
-    {
-      id: "commonwealth-games",
+      id: "cwg-100m",
       category: "SPORT",
       when: "TUE 28 JUL",
-      badges: [{ name: "UK", emblems: ["uk.png"], country: "826" }, { name: "AUSTRALIA", emblems: ["australia.png"], country: "036", region: [[113, -39.5], [154, -11]], anchor: [134, -25] }],
-      title: "[[Glasgow Games]] day five: [[100m showdown]] tonight; Australia leads medals",
+      badges: [{ name: "CAMEROON", emblems: ["cameroon.png"], country: "120" }, { name: "NEW ZEALAND", emblems: ["newzealand.png"], country: "554" }],
+      title: "[[Eseme]] storms to 100m gold in [[9.83]]; Hobbs takes women's title",
       location: "Glasgow, Scotland",
-      countries: ["826", "036"],
+      countries: ["120", "554", "826"],
       markers: [{ lon: -4.25, lat: 55.86, label: "GLASGOW" }],
       summary:
-        "The Commonwealth Games hit day five with the men's and women's 100m finals headlining tonight's athletics session and Chalmers and Richards in the pool. Australia tops the medal table with 24, including 12 golds; day four saw India's first-ever para-athletics gold and Georgia Godwin defending her pole-vault title.",
+        "Cameroon's Emmanuel Eseme won the Commonwealth men's 100m in a Games-record 9.83s, ahead of Australia's Lachlan Kennedy (9.85, national record) and Nigeria's Kanyinsola Ajayi. New Zealand's Zoe Hobbs led wire-to-wire in the women's final, clocking 10.93 — a national and Oceania record — as the Glasgow Games pass their halfway mark.",
       source: "Olympics.com"
     }
   ],
   sources: [
-    { name: "The Times of Israel — Netanyahu departs for Trump meeting", url: "https://www.timesofisrael.com/netanyahu-amid-reported-iranian-security-threat-takes-off-quietly-for-trump-meeting/" },
-    { name: "NPR — Netanyahu to meet Trump", url: "https://www.npr.org/2026/07/28/g-s1-135833/trump-netanyahu-iran-war" },
-    { name: "CNN — Iran war live updates, Jul 28", url: "https://www.cnn.com/2026/07/28/world/live-news/iran-trump-news" },
-    { name: "CNBC — US–Iran war pauses, oil tumbles", url: "https://www.cnbc.com/2026/07/27/us-iran-war-trump-hormuz.html" },
-    { name: "France 24 — Burnham hosts Zelensky", url: "https://www.france24.com/en/europe/20260727-burnham-to-welcome-zelensky-on-first-foreign-leader-visit-to-london-since-taking-office" },
-    { name: "Ukrinform — Romania recalls ambassador, expels diplomat", url: "https://www.ukrinform.net/rubric-polytics/4148433-romania-recalls-ambassador-from-moscow-for-consultations-expels-russian-diplomat.html" },
-    { name: "Kyiv Post — ISW assessment, Jul 27", url: "https://www.kyivpost.com/post/81190" },
-    { name: "CNN — France and Spain wildfires live, Jul 28", url: "https://edition.cnn.com/2026/07/28/world/live-news/france-spain-wildfires-ww2" },
-    { name: "Al Jazeera — Pakistan monsoon toll tops 100", url: "https://www.aljazeera.com/news/2026/7/27/death-toll-from-pakistan-monsoon-rains-floods-tops-100" },
-    { name: "The Rio Times — Fujimori inauguration", url: "https://www.riotimesonline.com/keiko-fujimori-inauguration-peru-2026/" },
-    { name: "Al Jazeera — Sudan army claims Khartoum–El Obeid highway", url: "https://www.aljazeera.com/news/2026/7/27/sudans-army-claims-control-of-major-highway-linking-khartoum-and-el-obeid" },
-    { name: "The Korea Herald — Yoon suspended term", url: "https://www.koreaherald.com/article/10821698" },
-    { name: "Olympics.com — Glasgow 2026 day five schedule", url: "https://www.olympics.com/en/news/commonwealth-games-2026-schedule-tuesday-28-july-glasgow-100m-sprinters-track-showdown-chalmers-richards-how-to-watch-day-five-live" }
+    { name: "CNBC — Iran launches surprise ballistic missile attack on US forces", url: "https://www.cnbc.com/2026/07/29/us-iran-war-hormuz-centcom.html" },
+    { name: "Axios — Iran missile attack on US base in Jordan", url: "https://www.axios.com/2026/07/28/iran-missile-attack-us-base-jordan" },
+    { name: "The Times of Israel — liveblog Jul 29: IRGC targets US forces in Jordan", url: "https://www.timesofisrael.com/liveblog-july-29-2026/" },
+    { name: "Bloomberg — Oil market news and analysis for July 29", url: "https://www.bloomberg.com/news/articles/2026-07-28/latest-oil-market-news-and-analysis-for-july-29" },
+    { name: "ABC News — Netanyahu and Zelenskyy meet separately with Trump", url: "https://abcnews.com/Politics/netanyahu-zelenskyy-push-agendas-white-house-meetings-trump/story?id=135123010" },
+    { name: "Foreign Policy — Trump meets Zelensky, Netanyahu at White House", url: "https://foreignpolicy.com/2026/07/28/trump-zelensky-netanyahu-white-house-russia-ukraine-patriots-iran-war-nuclear/" },
+    { name: "Kyiv Independent — Moscow Oblast plant struck, Crimea blackout", url: "https://kyivindependent.com/moscow-oblast-industrial-plant-reportedly-struck-by-ukrainian-drones-blackout-in-occupied-crimea/" },
+    { name: "Ukrainska Pravda — Ukraine downs 107 of 131 Russian drones", url: "https://www.pravda.com.ua/eng/news/2026/07/28/8046188/" },
+    { name: "ABC News — UN chief makes rare Cyprus visit", url: "https://abcnews.com/International/wireStory/chief-makes-rare-cyprus-visit-ease-decades-ethnic-135148176" },
+    { name: "Cyprus Mail — Erhürman tells Guterres of will for solution", url: "https://cyprus-mail.com/2026/07/28/erhurman-tells-guterres-of-turkish-cypriots-will-for-solution" },
+    { name: "Al-Monitor — Sudan RSF leader 'unleashes' fighters after Kordofan losses", url: "https://www.al-monitor.com/originals/2026/07/sudan-rsf-leader-unleashes-fighters-after-army-gains-kordofan" },
+    { name: "NPR — Fire crews race against next heat wave in France and Spain", url: "https://www.npr.org/2026/07/28/g-s1-135828/europe-wildfires" },
+    { name: "Dawn — Monsoon deaths cross 100; more rain from July 29", url: "https://www.dawn.com/news/2018500/nationwide-deaths-this-monsoon-cross-100-more-rain-likely-in-countrys-upper-parts-from-july-29" },
+    { name: "The Washington Times — Japan to launch new intelligence agency at end of July", url: "https://www.washingtontimes.com/news/2026/jul/24/japan-launch-new-intelligence-agency-intel-oversight-body-end-july/" },
+    { name: "Euronews — news bulletin: Fujimori's 'iron fist' pledge", url: "https://www.euronews.com/video/2026/07/27/latest-news-bulletin-july-27th-2026-morning" },
+    { name: "Olympics.com — Eseme storms to 100m gold in Games record", url: "https://www.olympics.com/en/news/commonwealth-games-2026-cameroon-s-emmanuel-eseme-storms-to-100m-men-s-gold-in-games-record-time" },
+    { name: "1News — Zoe Hobbs wins 100m gold at Commonwealth Games", url: "https://www.1news.co.nz/2026/07/29/wild-gold-for-zoe-hobbs-in-100m-at-commonwealth-games/" }
   ]
 };
