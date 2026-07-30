@@ -1,10 +1,10 @@
 // THE WAR ROOM — Daily Geopolitical Brief data
-// Brief compiled for Wednesday, 29 July 2026, from open-source reporting.
+// Brief compiled for Thursday, 30 July 2026, from open-source reporting.
 // All items are from the past week. Country codes are ISO 3166-1 numeric
 // ids matching world-atlas TopoJSON.
 
 window.BRIEF = {
-  date: "29//JULY//2026",
+  date: "30//JULY//2026",
   // alliance blocs — a story may list a group key in `countries` to
   // highlight every member in the bloc's colour (EU blue, etc.)
   groups: {
@@ -14,185 +14,196 @@ window.BRIEF = {
   },
   events: [
     {
-      id: "iran-jordan-missiles",
+      id: "us-strikes-iran",
       category: "SECURITY",
-      when: "TUE 28 JUL",
-      badges: [{ name: "IRAN", emblems: ["iran.svg"], country: "364" }, { name: "USA", emblems: ["usa.svg"], country: "840", region: [[-125, 24], [-66, 50]], anchor: [-98.5, 39.8] }],
-      title: "[[Iran]] fires ballistic missiles at US base in [[Jordan]] — pause punctured",
-      location: "Jordan — Iraq",
-      countries: ["364", "840", "400", "368"],
+      when: "THU 30 JUL",
+      badges: [{ name: "USA", emblems: ["usa.svg"], country: "840", region: [[-125, 24], [-66, 50]], anchor: [-98.5, 39.8] }, { name: "IRAN", emblems: ["iran.svg"], country: "364" }],
+      title: "[[US strikes Iran]] overnight — Trump: [['our turn']] after Jordan attack",
+      location: "Bandar Abbas, Iran",
+      countries: ["840", "364"],
       markers: [
-        { lon: 35.93, lat: 31.95, label: "AMMAN" },
-        { lon: 51.39, lat: 35.69, label: "TEHRAN" },
-        { lon: 44.36, lat: 33.31, label: "BAGHDAD" }
+        { lon: 56.28, lat: 27.18, label: "BANDAR ABBAS" },
+        { lon: 51.39, lat: 35.69, label: "TEHRAN" }
       ],
       summary:
-        "IRGC forces launched multiple ballistic missiles at a US base in Jordan — Iran's first attack on American forces since Trump paused strikes on Friday. All missiles were intercepted, and the US and Saudi militaries answered with joint precision strikes on Iran-aligned militias in Iraq that CENTCOM says were directed by the IRGC to hit US forces and Saudi energy infrastructure.",
-      source: "CNBC"
+        "The US launched fresh strikes on Iran in the early hours of Thursday local time, with blasts reported in the port city of Bandar Abbas and around islands near the Strait of Hormuz. The wave answers Tuesday's intercepted Iranian missile attack on a US base in Jordan; Trump told Fox News Iran is 'going to get a beating' and declared it was 'our turn' as the brief pause for diplomacy collapsed.",
+      source: "CNN"
     },
     {
       id: "hormuz-oil",
       category: "ECONOMY",
       when: "WED 29 JUL",
       badges: [{ name: "IRAN", emblems: ["iran.svg"], country: "364" }, { name: "SAUDI ARABIA", emblems: ["saudi.png"], country: "682" }],
-      title: "[[Brent]] rebounds toward $88 as Iran rejects [[Omani Hormuz plan]]",
+      title: "[[Brent]] jumps 7% past $90; Hormuz traffic collapses to [[14 ships]] a day",
       location: "Strait of Hormuz",
-      countries: ["364", "512", "682"],
+      countries: ["364", "682", "512"],
       markers: [
         { lon: 56.5, lat: 26.6, label: "STRAIT OF HORMUZ" },
         { lon: 58.38, lat: 23.61, label: "MUSCAT" }
       ],
       summary:
-        "Brent climbed more than 4% to near $88 after the intercepted attack, paring a 16% three-session slide that was the steepest since 2020. Tehran rejected Oman's plan to split control of the Strait of Hormuz evenly — the inbound lane 'must be entirely under Iran's control', deputy FM Gharibabadi said — as FM Araghchi discussed the waterway's security with his Saudi and Omani counterparts.",
-      source: "Bloomberg"
+        "Brent crude leapt more than 7% to $90.66 after Trump vowed retaliation for Iran's attempted attack on US forces. Just 14 commercial ships transited the Strait of Hormuz in 24 hours — against roughly 120 daily crossings before the war — through a chokepoint that normally carries about a fifth of global oil supply.",
+      source: "CNN Business"
     },
     {
-      id: "trump-meetings",
-      category: "DIPLOMACY",
-      when: "YESTERDAY",
-      badges: [{ name: "USA", emblems: ["usa.svg"], country: "840", region: [[-125, 24], [-66, 50]], anchor: [-98.5, 39.8] }, { name: "UKRAINE", emblems: ["ukraine.png"], country: "804" }, { name: "ISRAEL", emblems: ["israel.svg"], country: "376", anchor: [32.6, 32.3] }],
-      title: "Trump hosts [[Zelensky]] and [[Netanyahu]] back-to-back at White House",
-      location: "Washington, DC",
-      countries: ["840", "804", "376"],
-      markers: [{ lon: -77.04, lat: 38.9, label: "WASHINGTON" }],
-      summary:
-        "Trump met Zelensky and then Netanyahu in separate Oval Office sessions the White House called 'positive and productive'. Zelensky said they discussed licences for Ukrainian production of Patriot interceptors and reinvigorating diplomacy with Moscow; Netanyahu — who called it one of his greatest meetings with Trump — focused on the Lebanon framework agreement and expanding the Abraham Accords.",
-      source: "ABC News"
-    },
-    {
-      id: "ukraine-drones",
+      id: "kyiv-ryazan",
       category: "SECURITY",
-      when: "TUE 28 JUL",
+      when: "THU 30 JUL",
       badges: [{ name: "UKRAINE", emblems: ["ukraine.png"], country: "804" }, { name: "RUSSIA", emblems: ["russia.svg"], country: "643", region: [[27, 45], [105, 70]], anchor: [55, 57] }],
-      title: "Drone war peaks: Russia claims [[356 downed]]; Kyiv stops 107 of 131",
-      location: "Moscow Oblast — Pokrovsk",
+      title: "Russian missiles kill [[8 in Kyiv]] after Ukraine burns [[Ryazan refinery]]",
+      location: "Kyiv — Ryazan",
       countries: ["804", "643"],
       markers: [
-        { lon: 37.62, lat: 55.75, label: "MOSCOW" },
-        { lon: 37.18, lat: 48.28, label: "POKROVSK" }
+        { lon: 30.52, lat: 50.45, label: "KYIV" },
+        { lon: 39.74, lat: 54.63, label: "RYAZAN" }
       ],
       summary:
-        "Ukrainian drones struck a steel-fabrication plant in Chekhov outside Moscow and blacked out parts of occupied Crimea; Russia's defence ministry claimed 356 drones downed overnight. Ukraine's air defences destroyed 107 of 131 Russian attack drones, while the general staff logged 226 combat clashes in a single day — the heaviest around Pokrovsk.",
-      source: "Kyiv Independent"
+        "Russian ballistic missiles struck Kyiv on Thursday, killing at least eight people a day after Zelensky warned Moscow the war would 'come at a higher cost'. Ukrainian drones had just set ablaze Rosneft's Ryazan refinery — about 5% of Russia's processing output — plus a Perm refinery and a Rostov export terminal, deepening strikes that have already cut Russian refining capacity by roughly a fifth.",
+      source: "Al Jazeera"
     },
     {
-      id: "cyprus-talks",
-      category: "DIPLOMACY",
-      when: "WED 29 JUL",
-      badges: [{ name: "CYPRUS", emblems: ["cyprus.png"], country: "196" }],
-      title: "[[Guterres]] convenes rival [[Cyprus leaders]] in buffer-zone talks today",
-      location: "Nicosia, Cyprus",
-      countries: ["196"],
-      markers: [{ lon: 33.36, lat: 35.17, label: "NICOSIA" }],
-      summary:
-        "Guterres holds joint talks today with Greek Cypriot leader Christodoulides and Turkish Cypriot leader Erhürman in the UN buffer zone dividing Nicosia — the first visit by a sitting UN chief in 16 years, aimed at reviving negotiations nine years after they collapsed. Erhürman favours a federal settlement but insists on ground rules covering political equality before talks resume.",
-      source: "AP"
-    },
-    {
-      id: "sudan-bara",
-      category: "SECURITY",
-      when: "TUE 28 JUL",
-      badges: [{ name: "SUDAN", emblems: ["sudan.png"], country: "729" }],
-      title: "Army takes [[Bara]]; Dagalo [['releases the reins']] of RSF fighters",
-      location: "North Kordofan, Sudan",
-      countries: ["729"],
-      markers: [
-        { lon: 30.36, lat: 13.7, label: "BARA" },
-        { lon: 30.22, lat: 13.18, label: "EL OBEID" }
-      ],
-      summary:
-        "Sudan's army captured the town of Bara in North Kordofan, a second battlefield setback for the RSF in days after losing the Khartoum–El Obeid highway. RSF leader Dagalo responded with a video message 'releasing the reins' of his frontline fighters, and UN rights chief Türk warned a catastrophe is unfolding around El Obeid, citing summary executions, abductions and sexual violence.",
-      source: "Al-Monitor"
-    },
-    {
-      id: "europe-wildfires",
+      id: "japan-quake",
       category: "DISASTER",
       when: "WED 29 JUL",
-      badges: [{ name: "FRANCE", emblems: ["france.png"], country: "250" }, { name: "SPAIN", emblems: ["spain.svg"], country: "724" }],
-      title: "[[4,000 evacuated]] on Atlantic coast as [[new heatwave]] arrives today",
-      location: "Gironde, France — Madrid, Spain",
-      countries: ["250", "724"],
-      markers: [
-        { lon: -0.58, lat: 44.84, label: "GIRONDE" },
-        { lon: -3.7, lat: 40.42, label: "MADRID" }
-      ],
+      badges: [{ name: "JAPAN", emblems: ["japan.png"], country: "392" }],
+      title: "Japan quake toll hits [[18]] as rescuers comb collapsed [[Kumamoto mall]]",
+      location: "Kumamoto, Japan",
+      countries: ["392"],
+      markers: [{ lon: 130.71, lat: 32.8, label: "KUMAMOTO" }],
       summary:
-        "French authorities cleared nearly 4,000 people from Atlantic-coast tourist sites as returning heat threatens the fragile containment of the vast blaze west of Bordeaux, where 93 firefighters have been injured. The fires have burned some 300,000 acres across France and Spain and displaced roughly 330,000 people; Spain enters its fourth heatwave of the summer with its largest fire on record still burning.",
+        "The death toll from Tuesday's magnitude-7.1 earthquake in Kyushu rose to 18 as soldiers and rescue workers searched a partially collapsed Aeon shopping mall in Kumamoto, where five died and three remain missing after a suspected gas explosion. The military has mobilised 3,600 personnel and some 300,000 residents were evacuated amid fires and widespread power cuts.",
       source: "NPR"
     },
     {
-      id: "pakistan-monsoon",
-      category: "DISASTER",
+      id: "iraq-legal-action",
+      category: "DIPLOMACY",
       when: "WED 29 JUL",
-      badges: [{ name: "PAKISTAN", emblems: ["pakistan.png"], country: "586" }],
-      title: "Fresh [[monsoon spell]] hits Pakistan today; toll rises to [[110]]",
-      location: "Khyber Pakhtunkhwa, Pakistan",
-      countries: ["586"],
-      markers: [
-        { lon: 71.52, lat: 34.01, label: "PESHAWAR" },
-        { lon: 74.34, lat: 31.55, label: "LAHORE" }
-      ],
+      badges: [{ name: "IRAQ", emblems: ["iraq.png"], country: "368" }, { name: "SAUDI ARABIA", emblems: ["saudi.png"], country: "682" }],
+      title: "Iraq to pursue [[legal action]] against US and Saudi over militia strikes",
+      location: "Baghdad, Iraq",
+      countries: ["368", "840", "682"],
+      markers: [{ lon: 44.36, lat: 33.31, label: "BAGHDAD" }],
       summary:
-        "A powerful new monsoon spell moves over Pakistan's upper regions from today and is forecast to last until August 5, with the nationwide death toll from rains and flash floods now at 110 since June 26. Khyber Pakhtunkhwa accounts for 55 deaths and Punjab 36, most caused by collapsing houses and roofs.",
-      source: "Dawn"
+        "Iraq's prime minister directed the Foreign Ministry to pursue legal action against the United States and Saudi Arabia after their joint strikes on Iran-aligned militia targets killed or injured dozens on Iraqi soil. The move underscores Baghdad's deepening bind as the US–Iran war repeatedly spills across its territory.",
+      source: "CNN"
     },
     {
-      id: "japan-intel",
-      category: "SECURITY",
-      when: "THIS WEEK",
-      badges: [{ name: "JAPAN", emblems: ["japan.png"], country: "392" }],
-      title: "Japan launches first [[central intelligence agency]] since WWII on Friday",
-      location: "Tokyo, Japan",
-      countries: ["392"],
-      markers: [{ lon: 139.69, lat: 35.68, label: "TOKYO" }],
+      id: "fed-hold",
+      category: "ECONOMY",
+      when: "WED 29 JUL",
+      badges: [{ name: "USA", emblems: ["usa.svg"], country: "840", region: [[-125, 24], [-66, 50]], anchor: [-98.5, 39.8] }],
+      title: "Divided Fed [[holds rates]] steady — three dissenters wanted a [[hike]]",
+      location: "Washington, DC",
+      countries: ["840"],
+      markers: [{ lon: -77.04, lat: 38.9, label: "WASHINGTON" }],
       summary:
-        "Japan stands up its National Intelligence Bureau on July 31 — its first centralised espionage agency since World War II, launching with about 700 staff — and PM Takaichi chairs the inaugural National Intelligence Council the same day. The reform converts the Cabinet Intelligence and Research Office into a centralised apparatus amid espionage, cyberattack and foreign-influence concerns focused on China.",
-      source: "The Washington Times"
+        "The Federal Reserve held its benchmark rate at 3.50–3.75% for a fifth straight meeting, but the 9–3 vote saw regional presidents Hammack, Kashkari and Logan dissent in favour of a quarter-point increase. The statement flagged inflation still above the 2% goal after five-plus years, partly on energy supply shocks from the Middle East conflict, even as activity expands at a solid pace.",
+      source: "CNBC"
     },
     {
-      id: "fujimori-iron-fist",
-      category: "ELECTION",
-      when: "TUE 28 JUL",
-      badges: [{ name: "PERU", emblems: ["peru.png"], country: "604" }],
-      title: "President [[Fujimori]] pledges [['iron fist']] on crime in first address",
-      location: "Lima, Peru",
-      countries: ["604"],
-      markers: [{ lon: -77.03, lat: -12.05, label: "LIMA" }],
+      id: "un-sg-straw-poll",
+      category: "DIPLOMACY",
+      when: "THU 30 JUL",
+      badges: [{ name: "ARGENTINA", emblems: ["argentina.png"], country: "032" }],
+      title: "Security Council holds first [[straw poll]] on next [[UN secretary-general]]",
+      location: "UN HQ, New York",
+      countries: ["032", "152", "188", "218", "328", "686", "800"],
+      markers: [{ lon: -73.97, lat: 40.75, label: "NEW YORK" }],
       summary:
-        "Sworn in on Independence Day as Peru's first woman elected president, Keiko Fujimori used her inaugural address to pledge an 'iron fist' against organised crime and extortion. She takes office with a fragmented congress and protests already in the streets, after a runoff decided by fewer than 50,000 votes of 18 million cast.",
+        "The UN Security Council holds its first closed-door straw poll today on the seven candidates to succeed António Guterres, who steps down on December 31 after a decade. Contenders from Argentina, Chile, Costa Rica, Ecuador, Guyana, Senegal and Uganda — including IAEA chief Rafael Grossi and former Chilean president Michelle Bachelet — will learn whether members 'encourage' or 'discourage' their candidacies.",
+      source: "NPR"
+    },
+    {
+      id: "cyprus-5plus1",
+      category: "DIPLOMACY",
+      when: "WED 29 JUL",
+      badges: [{ name: "CYPRUS", emblems: ["cyprus.png"], country: "196" }],
+      title: "Guterres to convene [[5+1 Cyprus talks]] — guarantor powers on board",
+      location: "Nicosia, Cyprus",
+      countries: ["196", "300", "792", "826"],
+      markers: [{ lon: 33.36, lat: 35.17, label: "NICOSIA" }],
+      summary:
+        "Closing his first official visit to Cyprus, Guterres announced he will convene an expanded 5+1 meeting on the island's division, with both leaders and guarantor powers Greece, Turkey and the UK agreeing to move toward new negotiations. No date was set: the UN chief said the format needs 'adequate preparation', including progress on confidence-building measures between the two communities.",
       source: "Euronews"
     },
     {
-      id: "cwg-100m",
+      id: "taiwan-squeeze",
+      category: "SECURITY",
+      when: "WED 29 JUL",
+      badges: [{ name: "CHINA", emblems: ["china.svg"], country: "156" }, { name: "TAIWAN", emblems: ["taiwan.png"], country: "158" }],
+      title: "China's coastguard [['squeeze']] east of Taiwan stokes [[blockade]] fears",
+      location: "Philippine Sea — Taiwan",
+      countries: ["156", "158"],
+      markers: [{ lon: 121.56, lat: 25.03, label: "TAIPEI" }],
+      summary:
+        "China's coastguard and civilian fleet have expanded patrols in waters east of Taiwan through June and July, positioning vessels on the island's Pacific flank in what analysts warn may rehearse a containment strategy to cut Taiwan off from outside trade and assistance. Taipei says the pattern amounts to a creeping 'squeeze' rather than an exercise-driven surge.",
+      source: "Al Jazeera"
+    },
+    {
+      id: "ebola-drc",
+      category: "HEALTH",
+      when: "THIS WEEK",
+      badges: [{ name: "DR CONGO", emblems: ["drc.svg"], country: "180" }, { name: "UGANDA", emblems: ["uganda.png"], country: "800" }],
+      title: "DR Congo [[Ebola]] outbreak now [[third-largest]] ever; UN names crisis chief",
+      location: "Ituri, DR Congo — Uganda",
+      countries: ["180", "800"],
+      markers: [
+        { lon: 30.25, lat: 1.56, label: "BUNIA" },
+        { lon: 32.58, lat: 0.32, label: "KAMPALA" }
+      ],
+      summary:
+        "DR Congo's Bundibugyo-strain Ebola epidemic has reached 3,262 confirmed cases and 1,437 deaths, making it the third-largest outbreak on record and the fastest-spreading, with WHO warning it is outpacing the response. The UN named veteran official Julien Harneis to coordinate the effort as Oxford begins Phase 1 vaccine trials and UNICEF says the gap is funding, not solutions.",
+      source: "UN News"
+    },
+    {
+      id: "spain-wildfires",
+      category: "DISASTER",
+      when: "THU 30 JUL",
+      badges: [{ name: "SPAIN", emblems: ["spain.svg"], country: "724" }, { name: "FRANCE", emblems: ["france.png"], country: "250" }],
+      title: "[[Castellón]] blaze out of control as Madrid evacuees [[return home]]",
+      location: "Castellón, Spain — Gironde, France",
+      countries: ["724", "250"],
+      markers: [
+        { lon: -0.05, lat: 39.99, label: "CASTELLON" },
+        { lon: -0.58, lat: 44.84, label: "GIRONDE" }
+      ],
+      summary:
+        "Spain's Castellón fire is still out of control after burning nearly 25,000 acres and forcing more than 10,000 people out, even as the Madrid-region blaze stabilised and tens of thousands returned home. With some 330,000 displaced across France and Spain, crews race a new heatwave pushing temperatures toward 35°C over the fragile containment lines west of Bordeaux.",
+      source: "NPR"
+    },
+    {
+      id: "cwg-day7",
       category: "SPORT",
-      when: "TUE 28 JUL",
-      badges: [{ name: "CAMEROON", emblems: ["cameroon.png"], country: "120" }, { name: "NEW ZEALAND", emblems: ["newzealand.png"], country: "554" }],
-      title: "[[Eseme]] storms to 100m gold in [[9.83]]; Hobbs takes women's title",
+      when: "THU 30 JUL",
+      badges: [{ name: "AUSTRALIA", emblems: ["australia.png"], country: "036" }, { name: "INDIA", emblems: ["india.svg"], country: "356" }],
+      title: "[[Australia hits 47 golds]] at Glasgow; [[Chopra]] opens javelin defence",
       location: "Glasgow, Scotland",
-      countries: ["120", "554", "826"],
+      countries: ["036", "356", "826"],
       markers: [{ lon: -4.25, lat: 55.86, label: "GLASGOW" }],
       summary:
-        "Cameroon's Emmanuel Eseme won the Commonwealth men's 100m in a Games-record 9.83s, ahead of Australia's Lachlan Kennedy (9.85, national record) and Nigeria's Kanyinsola Ajayi. New Zealand's Zoe Hobbs led wire-to-wire in the women's final, clocking 10.93 — a national and Oceania record — as the Glasgow Games pass their halfway mark.",
+        "Australia leads the Commonwealth Games medal table with 47 golds — 37 of them from the pool — as Glasgow enters Day 7 of competition. India's Neeraj Chopra began his bid for a second Games javelin title in qualifying, while decathlete Tejaswin Shankar returned from injury; the Games run through August 2.",
       source: "Olympics.com"
     }
   ],
   sources: [
-    { name: "CNBC — Iran launches surprise ballistic missile attack on US forces", url: "https://www.cnbc.com/2026/07/29/us-iran-war-hormuz-centcom.html" },
-    { name: "Axios — Iran missile attack on US base in Jordan", url: "https://www.axios.com/2026/07/28/iran-missile-attack-us-base-jordan" },
-    { name: "The Times of Israel — liveblog Jul 29: IRGC targets US forces in Jordan", url: "https://www.timesofisrael.com/liveblog-july-29-2026/" },
-    { name: "Bloomberg — Oil market news and analysis for July 29", url: "https://www.bloomberg.com/news/articles/2026-07-28/latest-oil-market-news-and-analysis-for-july-29" },
-    { name: "ABC News — Netanyahu and Zelenskyy meet separately with Trump", url: "https://abcnews.com/Politics/netanyahu-zelenskyy-push-agendas-white-house-meetings-trump/story?id=135123010" },
-    { name: "Foreign Policy — Trump meets Zelensky, Netanyahu at White House", url: "https://foreignpolicy.com/2026/07/28/trump-zelensky-netanyahu-white-house-russia-ukraine-patriots-iran-war-nuclear/" },
-    { name: "Kyiv Independent — Moscow Oblast plant struck, Crimea blackout", url: "https://kyivindependent.com/moscow-oblast-industrial-plant-reportedly-struck-by-ukrainian-drones-blackout-in-occupied-crimea/" },
-    { name: "Ukrainska Pravda — Ukraine downs 107 of 131 Russian drones", url: "https://www.pravda.com.ua/eng/news/2026/07/28/8046188/" },
-    { name: "ABC News — UN chief makes rare Cyprus visit", url: "https://abcnews.com/International/wireStory/chief-makes-rare-cyprus-visit-ease-decades-ethnic-135148176" },
-    { name: "Cyprus Mail — Erhürman tells Guterres of will for solution", url: "https://cyprus-mail.com/2026/07/28/erhurman-tells-guterres-of-turkish-cypriots-will-for-solution" },
-    { name: "Al-Monitor — Sudan RSF leader 'unleashes' fighters after Kordofan losses", url: "https://www.al-monitor.com/originals/2026/07/sudan-rsf-leader-unleashes-fighters-after-army-gains-kordofan" },
-    { name: "NPR — Fire crews race against next heat wave in France and Spain", url: "https://www.npr.org/2026/07/28/g-s1-135828/europe-wildfires" },
-    { name: "Dawn — Monsoon deaths cross 100; more rain from July 29", url: "https://www.dawn.com/news/2018500/nationwide-deaths-this-monsoon-cross-100-more-rain-likely-in-countrys-upper-parts-from-july-29" },
-    { name: "The Washington Times — Japan to launch new intelligence agency at end of July", url: "https://www.washingtontimes.com/news/2026/jul/24/japan-launch-new-intelligence-agency-intel-oversight-body-end-july/" },
-    { name: "Euronews — news bulletin: Fujimori's 'iron fist' pledge", url: "https://www.euronews.com/video/2026/07/27/latest-news-bulletin-july-27th-2026-morning" },
-    { name: "Olympics.com — Eseme storms to 100m gold in Games record", url: "https://www.olympics.com/en/news/commonwealth-games-2026-cameroon-s-emmanuel-eseme-storms-to-100m-men-s-gold-in-games-record-time" },
-    { name: "1News — Zoe Hobbs wins 100m gold at Commonwealth Games", url: "https://www.1news.co.nz/2026/07/29/wild-gold-for-zoe-hobbs-in-100m-at-commonwealth-games/" }
+    { name: "CNN — July 29–30 live: Trump says it's 'our turn', US completes Iran strikes", url: "https://www.cnn.com/2026/07/29/world/live-news/iran-trump-news" },
+    { name: "Bloomberg — Trump tells Fox News US will be 'hitting Iran hard'", url: "https://www.bloomberg.com/news/articles/2026-07-29/trump-tells-fox-news-us-will-be-hitting-iran-hard-as-war-resumes" },
+    { name: "CNN Business — Brent jumps 7% on Trump retaliation vow", url: "https://www.cnn.com/2026/07/29/world/live-news/iran-trump-news" },
+    { name: "Al Jazeera — Russian ballistic missile strikes on Kyiv kill at least 8", url: "https://www.aljazeera.com/news/2026/7/30/russia-ballistic-missile-strikes-on-kyiv-come-after-zelenskyys-warning" },
+    { name: "Kyiv Independent — Ryazan refinery, Wildberries warehouse burn after drone strikes", url: "https://kyivindependent.com/wildberries-warehouse-major-oil-refinery-burn-as-ukraine-strikes-russias-ryazan-oblast-media-reports/" },
+    { name: "NPR — Death toll rises to 18 as rescuers comb quake rubble in Japan", url: "https://www.npr.org/2026/07/29/nx-s1-5911613/japan-earthquake-updates" },
+    { name: "France 24 — Multiple deaths in Japan mall collapse after 7.1-magnitude quake", url: "https://www.france24.com/en/asia-pacific/20260728-multiple-deaths-in-japan-mall-collapse-after-7-1-magnitude-earthquake" },
+    { name: "CNBC — Divided Fed holds interest rates steady", url: "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html" },
+    { name: "CNN Business — Fed holds after cliffhanger meeting, three dissents", url: "https://www.cnn.com/2026/07/29/business/live-news/federal-reserve-interest-rate-07-29-26" },
+    { name: "NPR — The race is on for the next United Nations secretary general", url: "https://www.krwg.org/national-news/2026-07-29/the-race-is-on-for-the-next-united-nations-secretary-general" },
+    { name: "The Jerusalem Post — UN Security Council begins straw polls for next secretary-general", url: "https://www.jpost.com/international/article-903957" },
+    { name: "Euronews — Guterres to convene new talks on ending Cyprus division", url: "https://www.euronews.com/my-europe/2026/07/29/un-chief-guterres-to-convene-new-talks-on-ending-cyprus-decades-long-conflict" },
+    { name: "Bloomberg — Cyprus leaders accept UN plan for new talks", url: "https://www.bloomberg.com/news/articles/2026-07-29/cyprus-leaders-accept-un-plan-for-new-talks-over-divided-island" },
+    { name: "Al Jazeera — China puts the 'squeeze' on Taiwan with new maritime patrols", url: "https://www.aljazeera.com/news/2026/7/29/china-puts-squeeze-on-taiwan-with-new-maritime-patrols" },
+    { name: "UN News — WHO warns DR Congo Ebola outbreak is outpacing response", url: "https://news.un.org/en/story/2026/07/1167959" },
+    { name: "Democracy Now — Headlines for July 29, 2026", url: "https://www.democracynow.org/2026/7/29/headlines" },
+    { name: "NPR — New heatwave threatens France's and Spain's fight to contain wildfires", url: "https://www.npr.org/2026/07/29/g-s1-136057/france-wildfires" },
+    { name: "Olympics.com — Commonwealth Games 2026 live, July 30: Day 7 updates", url: "https://www.olympics.com/en/news/commonwealth-games-2026-glasgow-live-results-scores-updates-india-july-30" },
+    { name: "Man of Many — Australia's gold medals at Glasgow 2026", url: "https://manofmany.com/entertainment/sport/australia-gold-medals-commonwealth-games-2026-glasgow" }
   ]
 };
